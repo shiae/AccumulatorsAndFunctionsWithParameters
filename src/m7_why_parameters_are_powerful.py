@@ -10,9 +10,9 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    # run_test_draw_circles()
+    run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    # run_test_better_draw_circles()
+    run_test_better_draw_circles()
     run_test_even_better_draw_circles()
 
 
@@ -125,7 +125,7 @@ def better_draw_circles(n):
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 3.
+# DONE: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
 #   of draw_circles by introducing a PARAMETER for the amount by
 #   which the radii of the concentric circles increase.
@@ -160,9 +160,9 @@ def run_test_even_better_draw_circles():
     print('--------------------------------------------------')
     print('Testing  better_draw_circles:  See graphics window')
     print('--------------------------------------------------')
-    even_better_draw_circles(3, 'black', 1)
-    even_better_draw_circles(1, 'blue', 5)
-    even_better_draw_circles(14, 'honeydew3', 3)
+    even_better_draw_circles(7, 'black', 6)
+    even_better_draw_circles(10, 'blue', 15)
+    even_better_draw_circles(14, 'MediumSpringGreen', 30)
 
 def even_better_draw_circles(n, outline_color, center_shift):
     """
@@ -171,15 +171,15 @@ def even_better_draw_circles(n, outline_color, center_shift):
          -- Circles' centers start at (0, 200) and shift to the right by
          center_shift
          -- They have radii that start at zero and increase by n each circle
-         -- Have an outline color specified by the caller
+         -- They have an outline color specified by the caller
          -- Pauses 0.05 seconds after rendering each.
     -- Waits for the user to press the mouse, then closes the window.
     """
 
     window = rg.RoseWindow(400, 400)
+    center_x = 0
 
     for k in range(21):
-        center_x = 0
         center_x = center_x + center_shift
         center = rg.Point(center_x, 200)
         circle = rg.Circle(center, n * k)
