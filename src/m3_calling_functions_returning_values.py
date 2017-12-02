@@ -319,7 +319,7 @@ def fancy_sums_of_digits(n):
             -- so this function returns 124309.
     """
     # ------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # DONE: 8. Implement and test this function.
     #
     ####################################################################
     # IMPORTANT: CALL, as many times as needed,
@@ -327,11 +327,10 @@ def fancy_sums_of_digits(n):
     ####################################################################
     # ------------------------------------------------------------------
 
-    sum_x = sum_of_digits(n ** 1000)
-    sum_y = n ** 999
-    wow = sum_x + sum_y
-    fancy_sum = sum_of_digits(wow)
-    return fancy_sum
+    x = n ** 1000
+    y = n ** 999
+    wow = sum_of_digits(x ** y)
+    return wow
 
 
 # ----------------------------------------------------------------------
