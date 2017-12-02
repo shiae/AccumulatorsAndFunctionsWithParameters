@@ -113,10 +113,7 @@ def better_draw_circles(n):
          -- Pauses 0.05 seconds after rendering each.
     -- Waits for the user to press the mouse, then closes the window.
     """
-    # ------------------------------------------------------------------
-    # Students:
-    #   Do NOT touch this function - it has no TO DO in it.
-    # ------------------------------------------------------------------
+
     window = rg.RoseWindow(400, 400)
 
     center = rg.Point(200, 200)
@@ -155,6 +152,38 @@ def better_draw_circles(n):
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+
+def run_test_even_better_draw_circles():
+    """ Tests the   better_draw_circles   function. """
+
+    print()
+    print('--------------------------------------------------')
+    print('Testing  better_draw_circles:  See graphics window')
+    print('--------------------------------------------------')
+    even_better_draw_circles(3)
+    even_better_draw_circles(1)
+    even_better_draw_circles(14)
+
+def even_better_draw_circles(n, outline_color, center_shift):
+    """
+    -- Constructs a window whose width and height are both 400.
+    -- Constructs and draws 21 rg.Circle objects such that:
+         -- Each is centered at (200, 200)
+         -- They have radii that start at zero and increase by n each circle
+         -- Pauses 0.05 seconds after rendering each.
+    -- Waits for the user to press the mouse, then closes the window.
+    """
+
+    window = rg.RoseWindow(400, 400)
+
+    for k in range(21):
+        center = rg.Point(200, 200)
+        circle = rg.Circle(center, n * k)
+        circle.attach_to(window)
+        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+
+    window.close_on_mouse_click()
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
