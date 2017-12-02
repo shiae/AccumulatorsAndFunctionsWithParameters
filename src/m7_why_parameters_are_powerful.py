@@ -10,10 +10,10 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_circles()
+    # run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    run_test_better_draw_circles()
-    # run_test_even_better_draw_circles()
+    # run_test_better_draw_circles()
+    run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -154,22 +154,24 @@ def better_draw_circles(n):
 # ----------------------------------------------------------------------
 
 def run_test_even_better_draw_circles():
-    """ Tests the   better_draw_circles   function. """
+    """ Tests the   even_better_draw_circles   function. """
 
     print()
     print('--------------------------------------------------')
     print('Testing  better_draw_circles:  See graphics window')
     print('--------------------------------------------------')
-    even_better_draw_circles(3)
-    even_better_draw_circles(1)
-    even_better_draw_circles(14)
+    even_better_draw_circles(3, 'black', 1)
+    even_better_draw_circles(1, 'blue', 5)
+    even_better_draw_circles(14, 'honeydew3', 3)
 
 def even_better_draw_circles(n, outline_color, center_shift):
     """
     -- Constructs a window whose width and height are both 400.
     -- Constructs and draws 21 rg.Circle objects such that:
-         -- Each is centered at (200, 200)
+         -- Circles' centers start at (0, 200) and shift to the right by
+         center_shift
          -- They have radii that start at zero and increase by n each circle
+         -- Have an outline color specified by the caller
          -- Pauses 0.05 seconds after rendering each.
     -- Waits for the user to press the mouse, then closes the window.
     """
@@ -177,8 +179,11 @@ def even_better_draw_circles(n, outline_color, center_shift):
     window = rg.RoseWindow(400, 400)
 
     for k in range(21):
-        center = rg.Point(200, 200)
+        center_x = 0
+        center_x = center_x + center_shift
+        center = rg.Point(center_x, 200)
         circle = rg.Circle(center, n * k)
+        circle.outline_color = outline_color
         circle.attach_to(window)
         window.render(0.05)  # Pauses for 0.05 seconds after rendering.
 
