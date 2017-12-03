@@ -257,6 +257,17 @@ def draw_cosines_and_sines():
     print('Running draw_cosines_and_sines:  See graphics window')
     print('--------------------------------------------------')
 
+    window = rg.RoseWindow(400, 400)
+    radius = 10
+
+    for k in range(101):
+        center = rg.Point(200 + (80 * math.cos(k)), 200 + (80 * math.sin(
+            k))
+        circle = rg.Circle(center, radius)
+        circle.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
