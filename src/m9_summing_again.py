@@ -60,13 +60,20 @@ def sum_powers(n, p):
       -- sum_powers(100, 0.1) returns about 144.45655
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     #   No fair running the code of  sum_powers  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
 
+    total = 0
+
+    for k in range(n):
+        add = (k + 1) ** p
+        total = total + add
+
+    return total
 
 def run_test_sum_powers_in_range():
     """ Tests the   sum_powers_in_range   function. """
