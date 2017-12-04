@@ -90,6 +90,23 @@ def run_test_sum_powers_in_range():
     print('Testing the   sum_powers_in_range   function:')
     print('--------------------------------------------------')
 
+    # Test 1:
+    expected = 225
+    answer = sum_powers_in_range(5, 3)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2:
+    expected = 385
+    answer = sum_powers_in_range(10, 2)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 6818
+    answer = sum_powers_in_range(3, 8)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
 
 def sum_powers_in_range(m, n, p):
     """
